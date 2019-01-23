@@ -17,6 +17,16 @@ void student::welcome_windows(){
 	cout << endl;
 }
 
+student::student(student_time s){
+	_student_name = "张三";
+	_student_age = 18;
+	_student_addr = "江苏省";
+	_student_number = 1;
+	_chinese_score = 0;
+	_math_score = 0;
+	_english_score = 0;
+}
+
 void student::input_name(){
 	cout << "请输入姓名:";
 	string sn;
@@ -137,19 +147,10 @@ bool student::SetMassage()//输入学生信息
 }
 
 student_massage::student_massage()//构造函数
-{
-}
+{}
 
 student_massage::~student_massage()//析构函数
-{
-}
-
-bool student::Check_time_valid(const student_time& S)//检查入学时间的合法性
-{
-	return true;
-}
-
-
+{}
 
 
 

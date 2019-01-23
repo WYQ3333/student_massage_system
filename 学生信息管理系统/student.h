@@ -24,16 +24,7 @@ struct student_time{
 };
 
 class student{
-	student(student_time s){
-		_student_name = "张三";
-		_student_age = 18;
-		_student_addr = "江苏省";
-		_student_number = 1;
-		_chinese_score = 0;
-		_math_score = 0;
-		_english_score = 0;
-	}
-	bool Check_time_valid(const student_time& S);//检查入学时间的合法性
+	student(student_time s);//构造函数
 	bool SetMassage();//输入学生信息
 	void welcome_windows();//打印界面
 	void Select_Todo();//选择选项
