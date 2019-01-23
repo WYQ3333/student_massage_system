@@ -57,6 +57,35 @@ void student::input_gender()//设置性别
 	}
 }
 
+void student::input_addr()//输入家庭住址
+{
+	cout << "请输入家庭住址:";
+	string addr;
+	cin >> addr;
+	_student_addr = addr;
+}
+void student::input_chinese()//输入语文成绩
+{
+	cout << "请输入语文成绩：";
+	double chinese;
+	cin >> chinese;
+	_chinese_score = chinese;
+}
+void student::input_math()//输入数学成绩
+{
+	cout << "请输入数学成绩：";
+	double math;
+	cin >> math;
+	_math_score = math;
+}
+void student::input_english()//输入英文成绩
+{
+	cout << "请输入英语成绩：";
+	double english;
+	cin >> english;
+	_english_score = english;
+}
+
 
 void student::Select_Todo(){
 	cout << "请输入你的选择：";
@@ -77,16 +106,23 @@ void student::Select_Todo(){
 			input_gender();
 			break;
 		case 5:
+			input_addr();
 			break;
 		case 6:
+			input_chinese();
 			break;
 		case 7:
+			input_math();
 			break;
 		case 8:
+			input_english();
 			break;
 		case 9:
+			cout << "退出系统" << endl;
+			return;
 			break;
 		default:
+			return;
 			break;
 		}
 	}
