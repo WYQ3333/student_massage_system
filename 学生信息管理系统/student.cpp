@@ -40,6 +40,23 @@ void student::input_time()//设置入学年份
 	cin >> T._day;
 }
 
+void student::input_gender()//设置性别
+{
+	cout << "请输入1(women)/0(man):";
+	int input = -1;
+	cin >> input;
+	if (input != 0 || input != 1){
+		cout << "输入错误，请重新输入:" << endl;
+		student::input_gender();
+	}
+	if (input == 0){
+		_student_gender = man;
+	}
+	if (input == 1){
+		_student_gender = women;
+	}
+}
+
 
 void student::Select_Todo(){
 	cout << "请输入你的选择：";
@@ -57,6 +74,7 @@ void student::Select_Todo(){
 			input_time();
 			break;
 		case 4:
+			input_gender();
 			break;
 		case 5:
 			break;
