@@ -25,7 +25,7 @@ struct student_time{
 
 class student{
 	student(student_time s);//构造函数
-	bool SetMassage();//输入学生信息
+	void SetMassage();//输入学生信息
 	void welcome_windows();//打印界面
 	void Select_Todo();//选择选项
 	void input_name();//设置姓名

@@ -138,12 +138,12 @@ void student::Select_Todo(){
 	}
 }
 
-bool student::SetMassage()//输入学生信息
+void student::SetMassage()//输入学生信息
 {
 	cout << "请输入学生信息：" << endl;
 	student::welcome_windows();
 	student::Select_Todo();
-	return true;
+	
 }
 
 student_massage::student_massage()//构造函数
@@ -157,6 +157,7 @@ student_massage::~student_massage()//析构函数
 
 ostream& operator<<(ostream& _cout, student_massage& SM)//输出运算符的重载
 {
+
 	return _cout;
 }
 
@@ -187,10 +188,7 @@ void student_massage::Select_Todo(){
 			break;
 		case 2:
 			//输入信息
-			/*if (!student::SetMassage()){
-				cout << "输入有误，输入失败" << endl;
-				return;
-			}*/
+			student::SetMassage();
 			break;
 		case 3:
 			//删除信息
