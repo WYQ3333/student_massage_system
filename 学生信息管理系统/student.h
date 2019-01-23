@@ -15,16 +15,25 @@ struct student_time{
 	unsigned short int _year;//年
 	unsigned short int _month;//月
 	unsigned short int _day;//日
+	student_time(unsigned short int year=1990, unsigned short int month=1,
+		unsigned short int day=1){
+		_year = year;
+		_month = month;
+		_day = day;
+	}
 };
 
-class student_massage{
-public:
-	student_massage(unsigned short int year=1990,unsigned short int month=1,
-		unsigned short int day=1);//构造函数
-	~student_massage();//析构函数
+class student{
+	student(student_time s){
+		_student_name = "张三";
+		_student_age = 18;
+		_student_add = "江苏省";
+		_student_number = 1;
+		_chinese_score = 0;
+		_math_score = 0;
+		_english_score = 0;
+	}
 	bool Check_time_valid(const student_time& S);//检查入学时间的合法性
-	friend ostream& operator<<(ostream& _cout, student_massage& SM);//输出运算符的重载
-	friend istream& operator>>(ostream& _cin, student_massage& SM);//输入运算符的重载
 	bool SetMassage();//输入学生信息
 	void welcome_windows();//打印界面
 	void Select_Todo();//选择选项
@@ -38,6 +47,17 @@ private:
 	double _chinese_score;//语文成绩
 	double _math_score;//数学成绩
 	double _english_score;//英语成绩
+};
+
+class student_massage{
+public:
+	student_massage();//构造函数
+	~student_massage();//析构函数
+	friend ostream& operator<<(ostream& _cout, student_massage& SM);//输出运算符的重载
+	friend istream& operator>>(ostream& _cin, student_massage& SM);//输入运算符的重载
+	
+	void welcome_windows();//打印界面
+	void Select_Todo();//选择选项
 };
 
 
