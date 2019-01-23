@@ -37,7 +37,10 @@ class student{
 	bool SetMassage();//输入学生信息
 	void welcome_windows();//打印界面
 	void Select_Todo();//选择选项
-private:
+	void input_name();//设置姓名
+	void input_age();//设置年龄
+	void input_time();//设置入学年份
+public:
 	student_time _student_time;//入学时间
 	string _student_name;//学生姓名
 	unsigned short int _student_age;//学生年龄

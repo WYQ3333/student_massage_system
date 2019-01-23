@@ -17,6 +17,30 @@ void student::welcome_windows(){
 	cout << endl;
 }
 
+void student::input_name(){
+	cout << "请输入姓名:";
+	string sn;
+	cin >> sn;
+	_student_name = sn;
+}
+
+void student::input_age()//设置年龄
+{
+	cout << "请输入年龄：";
+	unsigned short int age;
+	cin >> age;
+	_student_age = age;
+}
+void student::input_time()//设置入学年份
+{
+	cout << "请输入入学年份：";
+	student_time T;
+	cin >> T._day;
+	cin >> T._month;
+	cin >> T._day;
+}
+
+
 void student::Select_Todo(){
 	cout << "请输入你的选择：";
 	int input = 0;
@@ -24,11 +48,13 @@ void student::Select_Todo(){
 	while (input){
 		switch (input){
 		case 1:
-
+			input_name();
 			break;
 		case 2:
+			input_age();
 			break;
 		case 3:
+			input_time();
 			break;
 		case 4:
 			break;
@@ -48,6 +74,13 @@ void student::Select_Todo(){
 	}
 }
 
+bool student::SetMassage()//输入学生信息
+{
+	cout << "请输入学生信息：" << endl;
+	student::welcome_windows();
+	student::Select_Todo();
+	return true;
+}
 
 student_massage::student_massage()//构造函数
 {
@@ -64,13 +97,7 @@ bool student::Check_time_valid(const student_time& S)//检查入学时间的合法性
 
 
 
-bool student::SetMassage()//输入学生信息
-{
-	cout << "请输入学生信息：" << endl;
-	student::welcome_windows();
-	student::Select_Todo();
-	return true;
-}
+
 
 
 ostream& operator<<(ostream& _cout, student_massage& SM)//输出运算符的重载
